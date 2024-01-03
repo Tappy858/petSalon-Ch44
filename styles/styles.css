@@ -1,0 +1,62 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f3e6;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+h1 {
+    color: darkslategray;
+}
+
+#petCountSection {
+    background-color: #ffe0cc;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+#petsCount {
+    font-weight: bold;
+    color: #ff6600;
+}
+
+#petListSection {
+    background-color: #c2f0c2;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+h2 {
+    color: #008000;
+}
+
+#petsNames {
+    list-style-type: none;
+    padding: 0;
+}
+
+#petsNames li {
+    margin: 10px;
+    padding: 8px;
+    background-color: #b3d9ff;
+    border-radius: 5px;
+    display: inline-block;
+    color: #004080;
+}
+@media screen and (min-width: 600px) {
+    /* Adjust styles for screens wider than 600px */
+    form {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+}
