@@ -4,53 +4,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <title>Document</title>
 </head>
 <body>
     <header>
         <h1>The Fashion Pet</h1>
-
     </header>
-    <input type="text">
 <main>
     <div class="container">
         <div>
-            <h2>Register your pet</h2>
+            <h2>Register Your Pet</h2>
+            <div id="notifications"></div>
         <div>
-            <label for="name">Name: </label>
-            <input type="text" id="txtName">
+            <label for="name">Name:* </label>
+            <input class="form-control" type="text" id="txtName">
         </div>
         <div>
-            <label for="age">Age: </label>
-            <input type="text" id="txtAge">
+            <label for="age">Age:* </label>
+            <input class="form-control" type="text" id="txtAge">
         </div>
         <div>
             <label for="gender">Gender: </label>
-            <input type="text" id="txtGender">
+            <input class="form-control" type="text" id="txtGender">
+        </div>
+        <div>
+            <label for="service">Service:* </label>
+            <input class="form-control" type="text" id="txtService">
         </div>
         <div>
             <label for="breed">Breed: </label>
-            <input type="text" id="txtBreed">
+            <input class="form-control" type="text" id="txtBreed">
         </div>
-
-        <button onclick="register()">Register</button>
+        <br>
+        <button class="btn btn-secondary" onclick="register()">Register</button>
     </div>
-
-
-
-
+    <br>
             <!-- Display total pet count -->
             <div id=petCountSection >
                 <p id="petsCount">Total Pets Registered: </p>
             </div>
             <!-- Display pet names -->
             <div id="petListSection">
-                <h2>Registered Pets:</h2>
-                <ul id="petsNames"></ul>
-            </div>
+                <h2>Registered Pets:</h2>       
+        <div class="tdiv">  
+            <table class="table">
+                    <tr>
+                        <th>NAME</th>
+                        <th>AGE</th>
+                        <th>GENDER</th>
+                        <th>SERIVICE</th>
+                        <th>BREED</th>
+                        <th></th>
+                    </tr>
+                    <tbody id="pets">
+                    </tbody>
+            </table>
         </div>
 </main>
-
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="scripts/register.js"></script>
+    <script src="scripts/display.js"></script>
 </body>
 </html>

@@ -4,7 +4,9 @@ body {
     margin: 0;
     padding: 0;
 }
-
+.bg-red{
+    background-color: red;
+}
 .container {
     max-width: 800px;
     margin: 50px auto;
