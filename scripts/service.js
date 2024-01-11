@@ -8,15 +8,28 @@ function Service(description,price){
 
 //create the register function
 function register(){
-    console.log("adding new services");
+    //console.log("adding new services");
 
     let inputDescription=$("#txtDescription").val();
     let inputPrice=$("#txtPrice").val();
 
-    let newService= new Service(inputDescription,inputPrice);
-    services.push(newService);
+    if (inputDescription && inputPrice) {
+        let newService= new Service(inputDescription,inputPrice);
+        //services.push(newService);
+        //console.log(services);
+        saveArray(newService);
 
-    console.log(services);
+        displayNotification("Service registered successfully", "alert-success");
+    } else {
+        displayNotification("Please fill in all fields", "alert-danger");
+    }
+}
+
+
+
+function displayNotification(message, alertType) {
+    $("#notification").removeClass("alert-success alert-danger");
+    $("#notification").addClass(alertType).text(message).fadeIn(300).delay(2000).fadeOut(300);
 }
 
 //create the initial function

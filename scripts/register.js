@@ -43,7 +43,7 @@ function register(){
     let inputName = document.getElementById("txtName").value;
     let inputAge = document.getElementById("txtAge").value;
     let inputGender = document.getElementById("txtGender").value;
-    let inputService = document.getElementById("txtService").value;
+    let inputService = document.getElementById("txtServices").value;
     let inputBreed = document.getElementById("txtBreed").value;
     //console.log(inputAge,inputGender,inputName,inputBreed);
     //creating the obj
@@ -51,22 +51,22 @@ function register(){
 
     //push the object
     if(isValid(newPet)==true){
-    petSalon.pets.push(newPet);
-    //display the pets array on the console
-    //console.log(petSalon.pets);
-    displayPetCount();  // Call the function to update the count
-    displayPetCards();
-    $("input").val(""); //clear the inputs
-    showNotification("notifications","alert-success","Registration was successful");
+        petSalon.pets.push(newPet);
+        //display the pets array on the console
+        //console.log(petSalon.pets);
+        displayPetCount();  // Call the function to update the count
+        displayPetCards();
+        $("input").val(""); //clear the inputs
+        showNotification("notifications","alert-success","Registration was successful");
     }else{
-        $("#notifications").text("Insert all required fields").addClass("alert-danger").fadeIn(300).delay(2000).slideUp(300);
+        showNotification("notifications","alert-danger","Please add all required feilds!");
     }
 }
 
 function showNotification(id,styling,message){
     $("#"+id).removeClass("alert-danger");
     $("#"+id).removeClass("alert-success");
-    $("#"+id).text(message).addClass(styling).fadeIn(300).delay(2000).slideUP(300);
+    $("#"+id).text(message).addClass(styling).fadeIn(300).delay(2000).slideUp(300);
 }
 
 function deletePet(petID){
@@ -82,11 +82,17 @@ function deletePet(petID){
         displayPetCount(); // update the pet count
     }
 }
+function addServices(){
+    let services = readArray();
+    for(let i=0;i<services.length;i++){
+        $("#txtServices").append(`<option value="${services[i].description}">${services[i].description}</option>`)
+    }
+}
 function init(){
 //creating pets using constructor
-let p1 = new Pet("scooby",60,"male","Grooming", "Duck");
-let p2 = new Pet("yolo",50,"male","Grooming", "Cat");
-let p3 = new Pet("boo",40,"male","Grooming", "Dog");
+let p1 = new Pet("scooby",30,"male","grooming", "Duck");
+let p2 = new Pet("yolo",10,"male","nails", "Cat");
+let p3 = new Pet("boo",8,"male","grooming", "Dog");
 //pushing pets into pets array
 petSalon.pets.push(p1,p2,p3);
 
@@ -94,9 +100,9 @@ petSalon.pets.push(p1,p2,p3);
 //console.log(p1,p2,p3);
 displayPetCards ();
 displayPetCount();
-
+addServices();
 //hook events
-$("#notifications").show();
+$("#notifications").hide();
 
 }
 

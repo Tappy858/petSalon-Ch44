@@ -1,10 +1,10 @@
 function displayPetCards(){
     const DIV = document.getElementById("pets");
     let card="";
-    //travel the array (for)
+    // Loop through the pets array
     for(let i=0;i<petSalon.pets.length;i++){
         let pet = petSalon.pets[i];
-        //create html template
+        //create html template for each pet
         card += `
         <tr id="${pet.id}">
             <td> Name: ${pet.name}</td>
@@ -17,5 +17,6 @@ function displayPetCards(){
         `
         }
 DIV.innerHTML=card;
-//insert the html templat in the register.html
+//insert the html template in the register.html
+// Set the innerHTML of the specified container with the generated HTML
 }
